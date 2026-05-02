@@ -5,7 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body style="background: linear-gradient(to right, #ff9a9e, #fad0c4);">
+<body style="background: linear-gradient(to right, #4facfe, #00f2fe); min-height:100vh;">
 
 <nav class="navbar navbar-dark bg-dark">
   <div class="container">
@@ -14,10 +14,12 @@
   </div>
 </nav>
 
-<div class="container mt-5">
-    <div class="card shadow-lg p-4">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-        <h2 class="text-center mb-4">Form Aspirasi Mahasiswa</h2>
+    <div class="card shadow-lg p-4" style="max-width: 600px; width:100%; border-radius:15px;">
+        
+        <h2 class="text-center mb-3">💬 Form Aspirasi</h2>
+        <p class="text-center text-muted mb-4">Sampaikan aspirasi kamu di sini</p>
 
         <form method="POST" action="/aspirasi/simpan">
             @csrf
@@ -29,16 +31,17 @@
 
             <div class="mb-3">
                 <label>Angkatan</label>
-                <input type="text" name="angkatan" class="form-control" required>
+                <input type="text" name="angkatan" class="form-control" placeholder="Contoh: 2023" required>
             </div>
 
             <div class="mb-3">
                 <label>Kategori</label>
-                <select name="kategori" class="form-control" required>
-                    <option value="">-- Pilih --</option>
+                <select name="kategori" class="form-select" required>
+                    <option value="">-- Pilih Kategori --</option>
                     <option>Fasilitas</option>
                     <option>Akademik</option>
                     <option>Kegiatan</option>
+                    <option>Lainnya</option>
                 </select>
             </div>
 
@@ -47,13 +50,12 @@
                 <textarea name="aspirasi" class="form-control" rows="4" required></textarea>
             </div>
 
-            <button class="btn btn-danger w-100 mb-3">Kirim</button>
+            <button class="btn btn-primary w-100 mb-3">📨 Kirim Aspirasi</button>
 
         </form>
 
-        <!-- 🔻 PINDAH DI BAWAH -->
         <a href="/" class="btn btn-secondary w-100">
-            ← Kembali ke Form Pendaftaran
+            ← Kembali ke Pendaftaran
         </a>
 
     </div>

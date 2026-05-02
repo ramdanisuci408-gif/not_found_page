@@ -5,7 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body style="background: linear-gradient(to right, #4facfe, #00f2fe);">
+<body style="background: linear-gradient(to right, #4facfe, #00f2fe); min-height:100vh;">
 
 <nav class="navbar navbar-dark bg-dark">
   <div class="container">
@@ -14,10 +14,12 @@
   </div>
 </nav>
 
-<div class="container mt-5">
-    <div class="card shadow-lg p-4">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-        <h2 class="text-center mb-4">Form Pendaftaran Himpunan Mahasiswa</h2>
+    <div class="card shadow-lg p-4" style="max-width: 600px; width:100%; border-radius:15px;">
+        
+        <h2 class="text-center mb-3">📝 Form Pendaftaran</h2>
+        <p class="text-center text-muted mb-4">Isi data dengan lengkap</p>
 
         <form method="POST" action="/simpan">
             @csrf
@@ -34,31 +36,25 @@
 
             <div class="mb-3">
                 <label>Prodi</label>
-                <select name="prodi" class="form-control" required>
-                    <option value="">-- Pilih Prodi --</option>
-                    <option>Informatika</option>
-                    <option>Sistem Informasi</option>
-                    <option>Teknik Komputer</option>
-                </select>
+                <input type="text" name="prodi" class="form-control" placeholder="Contoh: Informatika" required>
             </div>
 
             <div class="mb-3">
                 <label>Email</label>
-                 <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" required>
             </div>
 
-        <!-- INI BAGIAN ALASAN -->
             <div class="mb-3">
                 <label>Alasan Bergabung</label>
                 <textarea name="alasan" class="form-control" rows="3" required></textarea>
             </div>
 
-                <button class="btn btn-primary w-100 mb-3">Daftar</button>
+            <button class="btn btn-primary w-100 mb-3"> Daftar</button>
+
         </form>
 
-        <!-- 🔻 PINDAH DI BAWAH -->
         <a href="/aspirasi" class="btn btn-warning w-100">
-            → Pindah ke Form Aspirasi
+            💬 Ke Form Aspirasi
         </a>
 
     </div>

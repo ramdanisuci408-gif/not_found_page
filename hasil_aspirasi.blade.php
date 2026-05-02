@@ -5,33 +5,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body style="background: linear-gradient(to right, #a18cd1, #fbc2eb);">
+<body style="background: linear-gradient(to right, #4facfe, #00f2fe); min-height:100vh;">
 
-<div class="container mt-5">
-    <div class="card shadow-lg p-4">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Pendaftaran</a>
+    <a class="navbar-brand" href="/aspirasi">Aspirasi</a>
+  </div>
+</nav>
 
-        <h2 class="text-center text-primary mb-4">Aspirasi Berhasil Dikirim 💬</h2>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-        <table class="table table-bordered">
-            <tr>
-                <th>Nama</th>
-                <td>{{ $nama }}</td>
-            </tr>
-            <tr>
-                <th>Angkatan</th>
-                <td>{{ $angkatan }}</td>
-            </tr>
-            <tr>
-                <th>Kategori</th>
-                <td>{{ $kategori }}</td>
-            </tr>
-            <tr>
-                <th>Aspirasi</th>
-                <td>{{ $aspirasi }}</td>
-            </tr>
-        </table>
+    <div class="card shadow-lg p-4 text-center" style="max-width: 600px; width:100%; border-radius:15px;">
+        
+        <h2 class="text-success mb-3">✅ Aspirasi Terkirim</h2>
+        <p class="text-muted mb-4">Terima kasih atas masukan kamu</p>
 
-        <a href="/aspirasi" class="btn btn-primary w-100">Kembali</a>
+        <ul class="list-group text-start mb-4">
+            <li class="list-group-item"><b>Nama:</b> {{ $nama }}</li>
+            <li class="list-group-item"><b>Angkatan:</b> {{ $angkatan }}</li>
+            <li class="list-group-item"><b>Kategori:</b> {{ $kategori }}</li>
+            <li class="list-group-item"><b>Aspirasi:</b> {{ $aspirasi }}</li>
+        </ul>
+
+        <a href="/aspirasi" class="btn btn-primary w-100">
+            ← Kembali ke Form Aspirasi
+        </a>
 
     </div>
 </div>
